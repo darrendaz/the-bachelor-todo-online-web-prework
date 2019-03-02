@@ -52,9 +52,9 @@ end
 def get_average_age_for_season(data, season)
   total = []
   total = data[season].map {|contestant|
-    contestant["age"].to_i
+    contestant["age"].to_f
   }
   
-  (total.inject{ |sum, el| sum + el }.to_f / total.length.to_f).round
+  (total.inject{ |sum, el| sum + el } / total.length).round
   
 end
