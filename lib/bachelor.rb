@@ -50,10 +50,11 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  (data[season].map {|contestant|
+  total = []
+  total = data[season].map {|contestant|
     contestant["age"].to_i
-  }.inject{ |sum, el| sum + el }.to_f / total.length.to_f).round
-  
-  
+  }
+  binding.pry
+  (total.inject{ |sum, el| sum + el }.to_f / total.length.to_f).round
   
 end
